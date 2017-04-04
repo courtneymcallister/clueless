@@ -4,7 +4,7 @@ const articleModel = mongoose.Schema({
   image:{
     type: String //url stored somewhere else?
   },
-  description:{
+  category:{
     type: String,
     required: true
   },
@@ -16,4 +16,4 @@ const articleModel = mongoose.Schema({
 });
 
 var Article = mongoose.model('Article', articleModel);
-module.exports = Article; 
+module.exports = Article;
