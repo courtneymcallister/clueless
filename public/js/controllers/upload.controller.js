@@ -1,13 +1,13 @@
 (function(){
   angular.module('clueless').controller('UploadController', UploadController);
 
-  UploadController.$inject = ['$scope'];
+  UploadController.$inject = ['$scope', 'ArticleService', 'UserService'];
 
-  function UploadController($scope){
+  function UploadController($scope, ArticleService, UserService){
     $scope.upload = upload;
 
-    function upload(url){
-      console.log('uploading image');
+    function upload(article){
+      console.log('yay');
     }
   };
 })()

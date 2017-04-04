@@ -6,12 +6,11 @@ const articleModel = mongoose.Schema({
   },
   category:{
     type: String,
-    required: true
+    // required: true
   },
   owner:{
     type: String,
-    required: true,
-    ref: User
+    // required: true
   }
 });
 

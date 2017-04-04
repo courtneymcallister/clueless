@@ -21,7 +21,7 @@ server.get('/', function(request, response){
 });
 
 server.use(userRouter);
-// server.use(articleRouter);
+server.use(articleRouter);
 
 server.listen(port, function(){
   console.log('Now listening on port...', port);

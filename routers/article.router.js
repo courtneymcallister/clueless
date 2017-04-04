@@ -1,15 +1,96 @@
 const express = require('express');
-const User = require('../models/user.model');
+const Article = require('../models/article.model');
 const router = express.Router();
 
-//GET /article
+//GET /articles
+router.get('/articles', function(req, res){
+  Article.find({}, function(err, documents){
+    if(err){
+      res.status(500).json({
+        msg: err
+      });
+    } else {
+      res.status(200).json({
+        articles: documents
+      });
+    }
+  });
+});
 
-//GET /article/:id
+//GET /articles/:id
+router.get('/articles/:id', function(req, res){
+  Article.find({_id: req.params.id}, function(err, documents){
+    if(err){
+      res.status(500).json({
+        msg: err
+      });
+    } else {
+      res.status(200).json({
+        articles: documents
+      });
+    }
+  });
+});
 
-//GET /article/category
+//GET /articles/category
+router.get('/articles/category/:categoryName', function(req, res){
+  Article.find({category: req.params.categoryName}, function(err, documents){
+    if(err){
+      res.status(500).json({
+        msg: err
+      });
+    } else {
+      res.status(200).json({
+        articles: documents
+      });
+    }
+  });
+});
 
-//POST /article
+//POST /articles
+router.post('/articles', function(req, res){
+  var newArticle = new Article(req.body);
+  newArticle.save(function(err, document){
+    if(err){
+      res.status(500).json({
+        msg: err
+      });
+    } else {
+      res.status(201).json({
+        msg: 'new article added'
+      });
+    }
+  });
+});
 
-//PUT /article/:id
+//PUT /articles/:id
+router.put('/articles/:id', function(req, res){
+  User.findOneAndUpdate({_id: req.params.id}, req.body, function(err, document){
+    if(err){
+      res.status(500).json({
+        msg: err
+      });
+    } else {
+      res.status(200).json({
+        msg: 'successfully updated'
+      });
+    }
+  });
+});
 
-//DELETE /article/:id
+//DELETE /articles/:id
+router.delete('/articles/:id', function(req, res){
+  User.remove({_id: req.params.id}, function(err, document){
+    if(err){
+      res.status(500).json({
+        msg: err
+      });
+    } else {
+      res.status(200).json({
+        msg: 'successfully deleted'
+      });
+    }
+  });
+});
+
+module.exports = router;

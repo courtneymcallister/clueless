@@ -1,3 +1,3 @@
 (function() {
-  angular.module('clueless', []);  
+  angular.module('clueless', ['ngRoute']);  
 }());
