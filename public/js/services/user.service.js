@@ -8,11 +8,11 @@
     var users = [];
 
     function signup(user){
-      return $http.post(base, user)
+      return $http.post('/signup', user)
                   .then(getAllUsers)
     }
     function login(user){
-      return $http.post(base, user)
+      return $http.post('/login', user)
                   .then(getAllUsers)
     }
     function getAllUsers(){

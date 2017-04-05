@@ -1,3 +1,5 @@
 (function() {
-  angular.module('clueless', ['ngRoute']);  
+  angular.module('clueless', [
+    'ngRoute'
+  ]);  
 }());
