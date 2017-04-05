@@ -12,8 +12,8 @@
                   .then(getAllUsers)
     }
     function login(user){
-      return $http.post('/login', user)
-                  .then(getAllUsers)
+      return console.log('logging in'); //this needs to change for tokens
+
     }
     function getAllUsers(){
       return $http.get(base)

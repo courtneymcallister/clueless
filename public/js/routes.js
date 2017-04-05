@@ -10,6 +10,14 @@
         controller: 'SignupController',
         templateUrl: 'html/views/signup.html',
       })
+      .when('/login', {
+        controller: 'LoginController',
+        templateUrl: 'html/views/login.html'
+      })
+      .when('/dashboard', {
+        controller: 'DashboardController',
+        templateUrl: 'html/views/dashboard.html'
+      })
       .otherwise({
         redirectTo: '/',
       });
