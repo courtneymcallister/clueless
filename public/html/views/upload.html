@@ -1,14 +1,14 @@
+Add clothes to your closet
 <form ng-submit='upload(article)'>
   <input type="file" id='uploadImage'>
-  <p>Please select a file</p>
+  <button type="submit">Upload clothes</button>
+  <br>
+
+  <img src="./images/shirt-icon.png" id='preview' style="width:50%">
+  <p>choose a category</p>
+  <select class="" name="" ng-model='article.category' ng-options='x for x in categories'>
+  </select>
+  <button ng-click="saveImage(article)">Save Details</button>
 
 
-  <input type='text' placeholder="Select a category" ng-model='article.category'>
-  <datalist id="category">
-    <option value="Shirt">
-    <option value="Pants">
-  </datalist>
-  <button type="submit">Post ur stuff!</button>
 </form>
-
-<img src="./images/cloud.jpg" id='preview'>

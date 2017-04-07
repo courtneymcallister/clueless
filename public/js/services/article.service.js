@@ -12,30 +12,27 @@
 
     }
 
-    function getAllArticles(){
-      return $http.get(base)
-                  .then(function(res){
-                    articles = res.data.articles;
-                  })
+    function getAll(){
+      return $http.get(base);
     }
-    function getOneArticle(id){
+    function getOne(id){
       return $http.get(`${base}/${id}`)
                   .then(getAllArticles);
     }
-    function updateArticle(id){
+    function update(id){
       return $http.put(`${base}/${id}`)
                   .then(getAllUsers);
     }
     function deleteArticle(id){
-      return $http.delete(`${base}/${id}`)
-                  .then(getAllUsers);
+      var url = `${base}/${post._id}`;
+      return $http.delete(url);
     }
 
     return{
       upload: upload,
-      getAllArticles: getAllArticles,
-      getOneArticle: getOneArticle,
-      updateArticle: updateArticle,
+      getAll: getAll,
+      getOne: getOne,
+      update: update,
       deleteArticle: deleteArticle
     }
   }

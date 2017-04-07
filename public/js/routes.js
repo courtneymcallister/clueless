@@ -16,7 +16,8 @@
       })
       .when('/dashboard', {
         controller: 'DashboardController',
-        templateUrl: 'html/views/dashboard.html'
+        templateUrl: 'html/views/dashboard.html',
+        css: 'css/dashboard.css'
       })
       .when('/upload', {
         controller: 'UploadController',

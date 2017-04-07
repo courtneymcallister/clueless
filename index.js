@@ -7,7 +7,7 @@ const aws = require('aws-sdk');
 server.set('views', './views');
 server.engine('html', require('ejs').renderFile);
 
-server.use(bodyParser.json({limit: '1MB'}));
+server.use(bodyParser.json({limit: '50mb'}));
 server.use(bodyParser.urlencoded({extended: true}));
 
 const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME || require('./secrets').S3_BUCKET_NAME;

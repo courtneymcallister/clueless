@@ -1,2 +1,14 @@
-dashboard
-All clothes:
+<a href="#!/upload">Add More Clothes To Your Closet!</a>
+<hr>
+
+<ul>
+  <li ng-repeat="article in articles">
+    <div>
+      <img src="{{ article.image }}" alt="" style='height: 300px;'><br>
+      <small>
+        <a href="#">edit</a>
+        <button ng-click='delete(article)'>delete</button>
+      </small>
+    </div>
+  </li>
+</ul>
