@@ -65,7 +65,7 @@ router.post('/articles', function(req, res){
 
 //PUT /articles/:id
 router.put('/articles/:id', function(req, res){
-  User.findOneAndUpdate({_id: req.params.id}, req.body, function(err, document){
+  Article.findOneAndUpdate({_id: req.params.id}, req.body, function(err, document){
     if(err){
       res.status(500).json({
         msg: err
@@ -80,7 +80,7 @@ router.put('/articles/:id', function(req, res){
 
 //DELETE /articles/:id
 router.delete('/articles/:id', function(req, res){
-  User.remove({_id: req.params.id}, function(err, document){
+  Article.remove({_id: req.params.id}, function(err, document){
     if(err){
       res.status(500).json({
         msg: err

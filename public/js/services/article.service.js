@@ -23,8 +23,8 @@
       return $http.put(`${base}/${id}`)
                   .then(getAllUsers);
     }
-    function deleteArticle(id){
-      var url = `${base}/${post._id}`;
+    function deleteArticle(article){
+      var url = `${base}/${article._id}`;
       return $http.delete(url);
     }
 

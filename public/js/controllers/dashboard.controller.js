@@ -23,7 +23,7 @@
     //   $location.path(url);
     // }
     function deleteArticle(article){
-      ArticalService.delete(article)
+      ArticleService.deleteArticle(article)
         .then(populateArticles);
       }
   };
