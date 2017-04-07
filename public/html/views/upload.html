@@ -1,0 +1,14 @@
+<form ng-submit='upload(article)'>
+  <input type="file" id='uploadImage'>
+  <p>Please select a file</p>
+
+
+  <input type='text' placeholder="Select a category" ng-model='article.category'>
+  <datalist id="category">
+    <option value="Shirt">
+    <option value="Pants">
+  </datalist>
+  <button type="submit">Post ur stuff!</button>
+</form>
+
+<img src="./images/cloud.jpg" id='preview'>

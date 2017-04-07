@@ -18,6 +18,10 @@
         controller: 'DashboardController',
         templateUrl: 'html/views/dashboard.html'
       })
+      .when('/upload', {
+        controller: 'UploadController',
+        templateUrl: 'html/views/upload.html'
+      })
       .otherwise({
         redirectTo: '/',
       });
