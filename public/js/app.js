@@ -1,5 +1,6 @@
 (function() {
   angular.module('clueless', [
-    'ngRoute'
-  ]);  
+    'ngRoute',
+    'angularCSS'
+  ]);
 }());

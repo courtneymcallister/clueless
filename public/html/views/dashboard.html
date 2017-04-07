@@ -1,14 +1,19 @@
-<a href="#!/upload">Add More Clothes To Your Closet!</a>
+<br><br>
+<div>
+  <a href="#!/upload">Add More Clothes To Your Closet!</a>
+</div>
 <hr>
 
 <ul>
   <li ng-repeat="article in articles">
     <div>
-      <img src="{{ article.image }}" alt="" style='height: 300px;'><br>
-      <small>
-        <a href="#">edit</a>
-        <a ng-click='deleteArticle(article)' href="">delete</a>
-      </small>
+      <img src="{{ article.image }}" alt=""><br>
+      <div>
+        <small>
+          <a ng-click='edit(article)' href="#">edit</a>
+          <a ng-click='deleteArticle(article)' href="">delete</a>
+        </small>
+      </div>
     </div>
   </li>
 </ul>
