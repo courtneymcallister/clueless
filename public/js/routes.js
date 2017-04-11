@@ -23,6 +23,10 @@
         controller: 'UploadController',
         templateUrl: 'html/views/upload.html'
       })
+      .when('/outfit-creator', {
+        controller: 'OutfitController',
+        templateUrl: 'html/views/outfit.html'
+      })
       .otherwise({
         redirectTo: '/',
       });

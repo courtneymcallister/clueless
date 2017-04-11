@@ -15,6 +15,9 @@
     function getAll(){
       return $http.get(base);
     }
+    function getByCategory(cat){
+      return $http.get(`${base}/category/${cat}`);
+    }
     function getOne(id){
       return $http.get(`${base}/${id}`)
                   .then(getAllArticles);
@@ -31,6 +34,7 @@
     return{
       upload: upload,
       getAll: getAll,
+      getByCategory: getByCategory,
       getOne: getOne,
       update: update,
       deleteArticle: deleteArticle
