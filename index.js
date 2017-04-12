@@ -7,6 +7,12 @@ const aws = require('aws-sdk');
 server.set('views', './views');
 server.engine('html', require('ejs').renderFile);
 
+const port = process.env.PORT || 8080;
+const MONGOURI = process.env.MONGOURI || require('./secrets').MONGOURI;
+
+//connect to the database
+mongoose.connect(MONGOURI);
+
 server.use(bodyParser.json({limit: '50mb'}));
 server.use(bodyParser.urlencoded({extended: true}));
 
@@ -60,14 +66,7 @@ server.post('/save-details', (req, res) => {
 const userRouter = require('./routers/user.router');
 const articleRouter = require('./routers/article.router');
 
-const port = process.env.PORT || 8080;
-const MONGOURI = process.env.MONGOURI || require('./secrets').MONGOURI;
-
 server.use(express.static(__dirname + '/public'));
-
-
-//connect to the database
-mongoose.connect(MONGOURI);
 
 server.get('/', function(request, response){
   response.sendFile('index.html', {root: __dirname + '/public/html'});

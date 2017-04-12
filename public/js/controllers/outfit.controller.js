@@ -8,6 +8,7 @@
     $scope.nextImage = nextImage;
     $scope.currentIndex = 0;
     $scope.slides = [];
+    $scope.getByCategory = getByCategory;
     $scope.getSlides = getSlides;
 
     getSlides();
@@ -18,7 +19,18 @@
                       for (var i = 0; i < imageData.length; i++){
                         $scope.slides.push(`${imageData[i].image}`);
                       };
-                      document.getElementById('image').src = $scope.slides[$scope.currentIndex];
+                      document.getElementById('shirt').src = $scope.slides[$scope.currentIndex];
+                    })
+                    .catch(function(err){
+                      console.log(err);
+                    });
+    }
+
+    function getByCategory(category){
+      ArticleService.getByCategory(category)
+                    .then(function(response){
+                      var thing = response.data.articles;
+                      console.log(thing);
                     })
                     .catch(function(err){
                       console.log(err);
@@ -31,7 +43,7 @@
       } else {
         $scope.currentIndex -= 1;
       };
-      document.getElementById('image').src = $scope.slides[$scope.currentIndex];
+      document.getElementById('shirt').src = $scope.slides[$scope.currentIndex];
       // console.log($scope.currentIndex);
     };
 
@@ -42,7 +54,7 @@
       } else {
         $scope.currentIndex += 1;
       };
-      document.getElementById('image').src = $scope.slides[$scope.currentIndex];
+      document.getElementById('shirt').src = $scope.slides[$scope.currentIndex];
       console.log($scope.currentIndex);
     }
   }

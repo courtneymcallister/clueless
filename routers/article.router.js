@@ -32,8 +32,8 @@ router.get('/articles/:id', function(req, res){
   });
 });
 
-//GET /articles/category
-router.get('/articles/category/:categoryName', function(req, res){
+//GET /articles/:category
+router.get('/articles/:categoryName', function(req, res){
   Article.find({category: req.params.categoryName}, function(err, documents){
     if(err){
       res.status(500).json({

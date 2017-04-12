@@ -15,16 +15,14 @@
     function getAll(){
       return $http.get(base);
     }
-    function getByCategory(cat){
-      return $http.get(`${base}/category/${cat}`);
+    function getByCategory(category){
+      return $http.get(`${base}/${category}`);
     }
     function getOne(id){
-      return $http.get(`${base}/${id}`)
-                  .then(getAllArticles);
+      return $http.get(`${base}/${id}`);
     }
     function update(id){
-      return $http.put(`${base}/${id}`)
-                  .then(getAllUsers);
+      return $http.put(`${base}/${id}`);
     }
     function deleteArticle(article){
       var url = `${base}/${article._id}`;
