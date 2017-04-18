@@ -1,11 +1,12 @@
 (function(){
   angular.module('clueless').controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['$scope', 'ArticleService'];
+  DashboardController.$inject = ['$scope', 'ArticleService', '$location'];
 
-  function DashboardController($scope, ArticleService){
+  function DashboardController($scope, ArticleService, $location){
     $scope.articles = [];
     $scope.deleteArticle = deleteArticle;
+    $scope.edit = edit;
 
     populateArticles();
     function populateArticles(){
@@ -18,10 +19,11 @@
                  });
     };
 
-    // function edit(post){
-    //   var url = `/edit/${post._id}`;
-    //   $location.path(url);
-    // }
+    function edit(article){
+      var url = `/edit/${article._id}`;
+      $location.path(url);
+    }
+
     function deleteArticle(article){
       ArticleService.deleteArticle(article)
         .then(populateArticles);

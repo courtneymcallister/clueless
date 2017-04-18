@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  background-image: url('/images/signin-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.signup-form {
+  padding-left: 38%;
+}
+
+.signup-form input {
+  margin: 5px;
+  height: 20px;
+  width: 260px;
+  font-size: 15px;
+  border: none;
+}
+
+.signup-form input:focus{
+  display: inline-block;
+  border-color: black;
+  border-width: thin;
+  outline: none;
+}
+
+.signup-form h2 {
+  font-weight: lighter;
+  margin-left: 20px;
+}
+
+.signup-form button {
+  height: 20px;
+  width: 100px;
+  margin-left: 90px;
+  margin-top: 20px;
+}
+
+.login-text {
+  padding-left: 40%;
+  padding-top: 10px;
+}

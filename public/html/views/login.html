@@ -1,11 +1,25 @@
-<form ng-submit='login(user)'>
-  <div>
-    <label>Email:</label>
-    <input type="text" ng-model='user.email' ng-required='true'>
-  </div>
-  <div>
-    <label>Password:</label>
-    <input type="password" ng-model="user.password" ng-required='true'>
-  </div>
-  <button type="submit">Login!</button>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Log In</title>
+  </head>
+  <body>
+    <form ng-submit='login(user)' class="login-form">
+      <div class="container">
+        <h2>Log in to Clueless Closet</h2>
+        <div>
+          <input type="text" ng-model='user.email' ng-required='true' placeholder="Email">
+        </div>
+        <div>
+          <input type="password" ng-model="user.password" ng-required='true' placeholder="Password">
+        </div>
+        <button type="submit">Login!</button>
+        <div class="signup-text">
+          <small>Don't have an account? <a href="/">Sign up here!</a></small>
+        </div>
+      </div>
+    </form>
+
+  </body>
+</html>

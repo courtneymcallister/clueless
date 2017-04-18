@@ -7,7 +7,8 @@
     $scope.previousImage = previousImage;
     $scope.nextImage = nextImage;
     $scope.currentIndex = 0;
-    $scope.slides = [];
+    $scope.tops = [];
+    $scope.bottoms = [];
     $scope.getSlides = getSlides;
 
     getSlides();
@@ -16,16 +17,23 @@
                     .then(function(response){
                       imageData = response.data.articles;
                       for (var i = 0; i < imageData.length; i++){
-                        $scope.slides.push(`${imageData[i].image}`);
+                        if (imageData[i].category == "shirt"){
+                          $scope.tops.push(`${imageData[i].image}`);
+                        } else if (imageData[i].category == 'pants'){
+                          $scope.bottoms.push(`${imageData[i].image}`);
+                        }
                       };
-                      document.getElementById('image').src = $scope.slides[$scope.currentIndex];
+                      console.log($scope.tops);
+                      console.log($scope.bottoms);
+                      document.getElementById('shirt').src = $scope.tops[$scope.currentIndex];
+                      document.getElementById('pants').src = $scope.bottoms[$scope.currentIndex];
                     })
                     .catch(function(err){
                       console.log(err);
                     });
     }
 
-    function previousImage(){
+    function previousImage(loc){
       if ($scope.currentIndex == 0){
         $scope.currentIndex = $scope.slides.length - 1;
       } else {
@@ -36,7 +44,7 @@
     };
 
 
-    function nextImage(){
+    function nextImage(loc){
       if ($scope.currentIndex == $scope.slides.length - 1){
         $scope.currentIndex = 0;
       } else {

@@ -9,10 +9,12 @@
       .when('/', {
         controller: 'SignupController',
         templateUrl: 'html/views/signup.html',
+        css: 'css/signup.css'
       })
       .when('/login', {
         controller: 'LoginController',
-        templateUrl: 'html/views/login.html'
+        templateUrl: 'html/views/login.html',
+        css: 'css/login.css'
       })
       .when('/dashboard', {
         controller: 'DashboardController',
@@ -26,6 +28,10 @@
       .when('/outfit-creator', {
         controller: 'OutfitController',
         templateUrl: 'html/views/outfit.html'
+      })
+      .when('/edit/:postId', {
+        controller: 'EditController',
+        templateUrl: 'html/views/edit.html'
       })
       .otherwise({
         redirectTo: '/',
