@@ -23,7 +23,8 @@
       })
       .when('/upload', {
         controller: 'UploadController',
-        templateUrl: 'html/views/upload.html'
+        templateUrl: 'html/views/upload.html',
+        css: 'css/upload.css'
       })
       .when('/outfit-creator', {
         controller: 'OutfitController',

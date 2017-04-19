@@ -1,14 +1,33 @@
-Add clothes to your closet
-<form ng-submit='upload(article)'>
-  <input type="file" id='uploadImage'>
-  <button type="submit">Upload clothes</button>
-  <br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add clothes to your closet</h2>
+      <form ng-submit='upload(article)' class="upload-form">
+        <div class="column1">
+          <input type="file" id='uploadImage' ng-required='true'>
+          <button type="submit">Preview Image</button>
+          <br>
+          <img src="./images/shirt-icon.png" id='preview'>
+        </div>
+        <div class="description-box">
+          <h3>Enter a Description:</h3>
+          <small>Choose a category*:</small>
+          <select ng-model='article.category' ng-options='x for x in categories' ng-required='true'>
+          </select><br>
+          <input type="text" placeholder="Brand" ng-model='article.brand'><br>
+          <input type="text" placeholder="Size" ng-model='article.size'><br>
+          <input type="text" placeholder="Date Purchased" ng-model='article.purchaseDate'><br>
+          <textarea name="name" rows="8" cols="40" placeholder="Notes" ng-model='article.notes'></textarea><br>
+          <button ng-click="saveImage(article)">Save Details</button><br>
+          <small>* Required field</small>
+        </div>
+      </form>
+    </div>
 
-  <img src="./images/shirt-icon.png" id='preview' style="width:50%">
-  <p>choose a category</p>
-  <select class="" name="" ng-model='article.category' ng-options='x for x in categories'>
-  </select>
-  <button ng-click="saveImage(article)">Save Details</button>
-
-
-</form>
+  </body>
+</html>

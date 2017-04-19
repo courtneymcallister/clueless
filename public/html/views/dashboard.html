@@ -1,19 +1,29 @@
-<br><br>
-<div>
-  <a href="#!/upload">Add More Clothes To Your Closet!</a>
-</div>
-<hr>
-
-<ul>
-  <li ng-repeat="article in articles">
-    <div>
-      <img src="{{ article.image }}" alt=""><br>
-      <div>
-        <small>
-          <a ng-click='edit(article)' href="">edit</a>
-          <a ng-click='deleteArticle(article)' href="">delete</a>
-        </small>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class='heading-text'>
+        <h2>My Closet</h2>
+        <small><a href="#!/upload">Add more clothes to your closet!</a></small>
       </div>
+      <ul>
+        <li ng-repeat="article in articles">
+          <div>
+            <img src="{{ article.image }}" alt=""><br>
+            <div>
+              <small class='small-text'>
+                <a ng-click='deleteArticle(article)' href="">delete</a>
+                <a ng-click='edit(article)' href="">edit</a>
+
+              </small>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
-  </li>
-</ul>
+  </body>
+</html>

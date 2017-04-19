@@ -11,6 +11,18 @@ const articleModel = mongoose.Schema({
   owner:{
     type: String,
     // required: true
+  },
+  brand:{
+    type: String,
+  },
+  size:{
+    type: String,
+  },
+  purchaseDate: {
+    type: String,
+  },
+  notes: {
+    type: String
   }
 });
 
