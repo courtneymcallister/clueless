@@ -2,9 +2,12 @@ body{
   background-image: url('/images/login-background.jpg');
   background-size: cover;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 
 }
 .login-form {
+  margin-top: 70px;
   margin-left: 35%;
   background-color: rgba(255, 255, 255, 0.4);
   width:400px;

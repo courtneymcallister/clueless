@@ -12,15 +12,10 @@
       </div>
       <ul>
         <li ng-repeat="article in articles">
-          <div>
+          <div class="image-links">
             <img src="{{ article.image }}" alt=""><br>
-            <div>
-              <small class='small-text'>
-                <a ng-click='deleteArticle(article)' href="">delete</a>
-                <a ng-click='edit(article)' href="">edit</a>
-
-              </small>
-            </div>
+            <a ng-click='deleteArticle(article)' href="">delete</a>
+            <a ng-click='edit(article)' href="">edit</a>
           </div>
         </li>
       </ul>

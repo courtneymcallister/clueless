@@ -1,57 +1,92 @@
-(function(){
+(function(){ //i realize this is crazy inefficient and redundant
   angular.module('clueless').controller('OutfitController', OutfitController);
 
   OutfitController.$inject = ['$scope', 'ArticleService'];
 
   function OutfitController($scope, ArticleService){
-    $scope.previousImage = previousImage;
-    $scope.nextImage = nextImage;
-    $scope.currentIndex = 0;
+    $scope.previousTop = previousTop;
+    $scope.nextTop = nextTop;
+    $scope.currentTopIndex = 0;
+    $scope.getTops = getTops;
     $scope.tops = [];
-    $scope.bottoms = [];
-    $scope.getSlides = getSlides;
 
-    getSlides();
-    function getSlides(){
+    $scope.previousBottom = previousBottom;
+    $scope.nextBottom = nextBottom;
+    $scope.currentBottomIndex = 0;
+    $scope.getBottoms = getBottoms;
+    $scope.bottoms = [];
+
+    getTops();
+    function getTops(){
       ArticleService.getAll()
                     .then(function(response){
-                      imageData = response.data.articles;
-                      for (var i = 0; i < imageData.length; i++){
-                        if (imageData[i].category == "shirt"){
-                          $scope.tops.push(`${imageData[i].image}`);
-                        } else if (imageData[i].category == 'pants'){
-                          $scope.bottoms.push(`${imageData[i].image}`);
-                        }
+                      imgData = response.data.articles;
+                      for(var q = 0; q < imgData.length; q++){
+                        if (`${imgData[q].category}` == 'Shirt'){
+                          console.log('shirt');
+                          $scope.tops.push(`${imgData[q].image}`);
+                        };
                       };
-                      console.log($scope.tops);
-                      console.log($scope.bottoms);
-                      document.getElementById('shirt').src = $scope.tops[$scope.currentIndex];
-                      document.getElementById('pants').src = $scope.bottoms[$scope.currentIndex];
+                      document.getElementById('tops').src = $scope.tops[$scope.currentTopIndex];
                     })
                     .catch(function(err){
                       console.log(err);
                     });
     }
 
-    function previousImage(loc){
-      if ($scope.currentIndex == 0){
-        $scope.currentIndex = $scope.slides.length - 1;
+    function previousTop(){
+      if ($scope.currentTopIndex == 0){
+        $scope.currentTopIndex = $scope.tops.length - 1;
       } else {
-        $scope.currentIndex -= 1;
+        $scope.currentTopIndex -= 1;
       };
-      document.getElementById('image').src = $scope.slides[$scope.currentIndex];
-      // console.log($scope.currentIndex);
+      document.getElementById('tops').src = $scope.tops[$scope.currentTopIndex];
     };
 
 
-    function nextImage(loc){
-      if ($scope.currentIndex == $scope.slides.length - 1){
-        $scope.currentIndex = 0;
+    function nextTop(){
+      if ($scope.currentTopIndex == $scope.tops.length - 1){
+        $scope.currentTopIndex = 0;
       } else {
-        $scope.currentIndex += 1;
+        $scope.currentTopIndex += 1;
       };
-      document.getElementById('image').src = $scope.slides[$scope.currentIndex];
-      console.log($scope.currentIndex);
+      document.getElementById('tops').src = $scope.tops[$scope.currentTopIndex];
+    }
+
+    getBottoms();
+    function getBottoms(){
+      ArticleService.getAll()
+                    .then(function(response){
+                      imgData = response.data.articles;
+                      for(var q = 0; q < imgData.length; q++){
+                        if (`${imgData[q].category}` == 'Pants'){
+                          $scope.bottoms.push(`${imgData[q].image}`);
+                        };
+                      };
+                      document.getElementById('bottoms').src = $scope.bottoms[$scope.currentBottomIndex];
+                    })
+                    .catch(function(err){
+                      console.log(err);
+                    });
+    }
+
+    function previousBottom(){
+      if ($scope.currentBottomIndex == 0){
+        $scope.currentBottomIndex = $scope.bottoms.length - 1;
+      } else {
+        $scope.currentBottomIndex -= 1;
+      };
+      document.getElementById('bottoms').src = $scope.bottoms[$scope.currentBottomIndex];
+    };
+
+
+    function nextBottom(){
+      if ($scope.currentBottomIndex == $scope.bottoms.length - 1){
+        $scope.currentBottomIndex = 0;
+      } else {
+        $scope.currentBottomIndex += 1;
+      };
+      document.getElementById('bottoms').src = $scope.bottoms[$scope.currentBottomIndex];
     }
   }
 })()

@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .heading-text{
   margin-left: 15px;
   width: 95%
@@ -32,18 +38,20 @@
 
 .container a:hover{
   text-decoration: underline;
+  color: #bbc793;
 }
 
-.small-text a{
-  float: right;
-  padding-left: 10px;
-  padding-right: 10px;
+.image-links a{
+  
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.image-links:hover a{
+  display: block;
+}
+
+.image-links{
+  background-color: white;
+  height: 40px;
 }
 
 .uploadLink{
