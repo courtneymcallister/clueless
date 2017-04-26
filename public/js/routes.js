@@ -28,7 +28,8 @@
       })
       .when('/outfit-creator', {
         controller: 'OutfitController',
-        templateUrl: 'html/views/outfit.html'
+        templateUrl: 'html/views/outfit.html',
+        css: 'css/outfit.css'
       })
       .when('/edit/:postId', {
         controller: 'EditController',

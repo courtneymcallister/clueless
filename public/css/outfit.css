@@ -1,0 +1,43 @@
+body{
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.outfit-container{
+  margin-left: 35%;
+  width: 400px;
+  height: 600px;
+}
+
+.outfit-container img{
+  margin-left: 5px;
+  height: 300px;
+  display: inline-block;
+}
+
+.outfit-container h2{
+  font-weight: lighter;
+}
+
+#prev-btn{
+  float: left;
+  margin-top: 100px;
+}
+
+#next-btn{
+  float: right;
+  margin-top: 100px;
+}
+.top-images{
+  width: 400px;
+
+}
+.top-images img{
+
+}
+
+.bottom-images{
+  display: inline-block;
+  width: 400px;
+}

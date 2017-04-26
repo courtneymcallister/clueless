@@ -1,13 +1,24 @@
-<h3>Outfit Creator!</h3>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Outfit Creator</title>
+  </head>
+  <body>
+    <div class="outfit-container">
+      <h2>Outfit Creator!</h2>
 
-<div>
-  <button ng-click='previousTop()'>previous</button>
-  <img id='tops' src="" alt="" style='height: 300px;'>
-  <button ng-click='nextTop()'>next</button>
-</div>
+      <div class="top-images">
+        <button id="prev-btn"ng-click='previousTop()'><<</button>
+        <img id='tops' src="" alt="">
+        <button id="next-btn" ng-click='nextTop()'>>></button>
+      </div>
 
-<div>
-  <button ng-click='previousBottom()'>previous</button>
-  <img id='bottoms' src="" alt="" style='height: 300px;'>
-  <button ng-click='nextBottom()'>next</button>
-</div>
+      <div class="bottom-images">
+        <button id="prev-btn" ng-click='previousBottom()'><<</button>
+        <img id='bottoms' src="" alt="">
+        <button id="next-btn" ng-click='nextBottom()'>>></button>
+      </div>
+    </div>
+  </body>
+</html>
