@@ -5,7 +5,7 @@
 
   function AuthConfig(UserService, $location, $rootScope){
     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute){
-      if(nextRoute.restricted.access && !UserService.isLoggedIn()){
+      if(nextRoute.access.restricted && !UserService.isLoggedIn()){
         $location.path('/');
       }
     });

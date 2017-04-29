@@ -17,7 +17,7 @@
           Authorization: `Bearer ${UserService.getToken()}`
         }
       }
-      return $http.get(base);
+      return $http.get(base, options);
     }
     function getByCategory(cat){
       return $http.get(`${base}/category/${cat}`);
