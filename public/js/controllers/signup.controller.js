@@ -2,9 +2,9 @@
   angular.module('clueless')
          .controller('SignupController', SignupController);
 
-  SignupController.$inject = ['$scope', 'UserService'];
+  SignupController.$inject = ['$scope', 'UserService', '$location'];
 
-  function SignupController($scope, UserService){
+  function SignupController($scope, UserService, $location){
     $scope.newUser = {};
     $scope.signup = signup;
 
@@ -12,6 +12,7 @@
       UserService.signup(user)
                   .then(function(response){
                     $scope.newUser = {};
+                    $location.path('/dashboard')
                   })
                   .catch(function(err){
                     console.log(err);

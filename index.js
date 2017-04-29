@@ -63,6 +63,9 @@ const articleRouter = require('./routers/article.router');
 const port = process.env.PORT || 8080;
 const MONGOURI = process.env.MONGOURI || require('./secrets').MONGOURI;
 
+//run the passport configuration
+require('./config/passport');
+
 server.use(express.static(__dirname + '/public'));
 
 

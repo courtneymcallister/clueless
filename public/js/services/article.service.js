@@ -1,18 +1,22 @@
 (function(){
   angular.module('clueless').factory('ArticleService', ArticleService);
 
-  ArticleService.$inject = ['$http'];
+  ArticleService.$inject = ['$http', 'UserService'];
 
-  function ArticleService($http){
+  function ArticleService($http, UserService){
     const base = '/articles'
     var articles = [];
 
     function upload(article){
       return $http.post(base, article);
-
     }
 
     function getAll(){
+      var options = {
+        headers: {
+          Authorization: `Bearer ${UserService.getToken()}`
+        }
+      }
       return $http.get(base);
     }
     function getByCategory(cat){
@@ -23,10 +27,20 @@
                   .then(getAllArticles);
     }
     function update(id){
+      var options = {
+        headers: {
+          Authorization: `Bearer ${UserService.getToken()}`
+        }
+      }
       return $http.put(`${base}/${id}`)
                   .then(getAllUsers);
     }
     function deleteArticle(article){
+      var options = {
+        headers: {
+          Authorization: `Bearer ${UserService.getToken()}`
+        }
+      }
       var url = `${base}/${article._id}`;
       return $http.delete(url);
     }

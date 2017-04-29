@@ -9,8 +9,9 @@ const articleModel = mongoose.Schema({
     // required: true
   },
   owner:{
-    type: String,
-    // required: true
+    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   },
   brand:{
     type: String,
