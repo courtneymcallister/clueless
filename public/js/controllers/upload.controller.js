@@ -1,9 +1,9 @@
 (function(){
   angular.module('clueless').controller('UploadController', UploadController);
 
-  UploadController.$inject = ['$scope', 'ArticleService', 'UserService', '$http', '$location'];
+  UploadController.$inject = ['$scope', 'UserService', '$http', '$location'];
 
-  function UploadController($scope, ArticleService, UserService, $http, $location){
+  function UploadController($scope, UserService, $http, $location){
     $scope.upload = upload;
     $scope.article = {};
     $scope.saveImage = saveImage;
@@ -22,6 +22,8 @@
     }
 
     function saveImage(article){
+      var userId = UserService.currentUser()._id;
+      article.owner = userId;
       article.image = document.getElementById('preview').src;
       $http.post('/articles', article)
            .then(function(){

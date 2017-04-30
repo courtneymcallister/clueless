@@ -42,7 +42,7 @@
         }
       }
       var url = `${base}/${article._id}`;
-      return $http.delete(url);
+      return $http.delete(url, options);
     }
 
     return{

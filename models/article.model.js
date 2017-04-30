@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 
 const articleModel = mongoose.Schema({
   image:{
-    type: String //url stored somewhere else?
+    type: String,
+    required: true
   },
   category:{
     type: String,
-    // required: true
+    required: true
   },
   owner:{
     required: true,
