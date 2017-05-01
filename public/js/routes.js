@@ -22,10 +22,10 @@
           restricted: false
         }
       })
-      .when('/dashboard', {
-        controller: 'DashboardController',
-        templateUrl: 'html/views/dashboard.html',
-        css: 'css/dashboard.css',
+      .when('/closet', {
+        controller: 'ClosetController',
+        templateUrl: 'html/views/closet.html',
+        css: 'css/closet.css',
         access: {
           restricted: true
         }

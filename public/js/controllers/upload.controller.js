@@ -27,7 +27,7 @@
       article.image = document.getElementById('preview').src;
       $http.post('/articles', article)
            .then(function(){
-             $location.path('/dashboard');
+             $location.path('/closet');
            })
            .catch(function(err){
              console.log(err);

@@ -72,7 +72,7 @@ router.post('/articles', function(req, res){
 
 //PUT /articles/:id
 router.put('/articles/:id', function(req, res){
-  Article.findOneAndUpdate({_id: req.params.id, owner: req.payload._id}, req.body, function(err, article){
+  Article.findOneAndUpdate({_id: req.params.id}, req.body, function(err, article){
     if(err){
       res.status(500).json({
         msg: err

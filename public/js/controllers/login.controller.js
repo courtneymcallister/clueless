@@ -11,7 +11,7 @@
       function login(user){
         UserService.login(user)
                     .then(function(){
-                      $location.path('/dashboard');
+                      $location.path('/closet');
                     })
                     .catch(function(err){
                       console.log(err);

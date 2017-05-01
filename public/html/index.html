@@ -12,7 +12,7 @@
   <body>
 
     <nav ng-controller='NavbarController' class='nav-container'>
-      <a href="#!/dashboard"><img src="images/Button-26.png" class='icon' alt="Dashboard"></a>
+      <a href="#!/closet"><img src="images/Button-26.png" class='icon' alt="closet"></a>
       <ul>
         <li ng-hide='isLoggedIn()'>
           <a href="#!/login">Log In</a>
@@ -24,7 +24,7 @@
           <a role='button' href="" ng-click='logout()'>Log Out</a>
         </li>
         <li ng-show='isLoggedIn()'>
-          <a href="#!/dashboard">Dashboard</a>
+          <a href="#!/closet">My Closet</a>
         </li>
         <li ng-show='isLoggedIn()'>
           <a href="#!/outfit-creator">Outfit Creator</a>
@@ -42,7 +42,7 @@
     <script src='js/controllers/upload.controller.js'></script>
     <script src='js/controllers/signup.controller.js'></script>
     <script src='js/controllers/login.controller.js'></script>
-    <script src='js/controllers/dashboard.controller.js'></script>
+    <script src='js/controllers/closet.controller.js'></script>
     <script src='js/controllers/navbar.controller.js'></script>
     <script src='js/controllers/outfit.controller.js'></script>
     <script src='js/controllers/edit.controller.js'></script>

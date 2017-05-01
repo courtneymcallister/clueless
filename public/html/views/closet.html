@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>closet</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+        <p id='sort-by'>Sort By...</p>
+
+        <p class='properties-border'></p>
+        <div ng-class="{'cat-list': isExpanded}">
+          <a ng-click="display()">Category <small id='caret'>╲╱</small></a>
+          <ul ng-class="{'expanded': isExpanded}" ng-show='isExpanded'>
+            <li href=""><a href="#">Shirts</a></li>
+            <li href=""><a href="#">Pants</a></li>
+          </ul>
+        </div>
+
+        <p class='properties-border'></p>
+        <a >Size<small id='caret'>╲╱</small></a>
+        <p class='properties-border'></p>
+        <a >Brand<small id='caret'>╲╱</small></a>
+        <p class='properties-border'></p>
+
+      </div>
+      <div class="push" id='push'>
+        <div class='heading-text'>
+          <span class='sidenav-icon' ng-click="openNav()">&#9776;</span>
+          <h2>My Closet!</h2>
+        </div>
+        <br><small id='upload-link'><a href="#!/upload">Add more clothes to your closet!</a></small>
+        <ul>
+          <li ng-repeat="article in articles">
+            <div class="image-container">
+              <img src="{{ article.image }}" alt="">
+              <div class="buttons">
+                <button class="btn" id="delete-btn" ng-click='deleteArticle(article)'>delete</button>
+                <button class="btn" id="edit-btn" ng-click='edit(article)'>edit</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>

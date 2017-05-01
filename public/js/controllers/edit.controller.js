@@ -21,7 +21,7 @@
     function edit(article){
       ArticleService.update(article)
                     .then(function(res){
-                      $location.path('/dashboard')
+                      $location.path('/closet')
                     })
                     .catch(function(err){
                       console.log(err);
