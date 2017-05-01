@@ -46,9 +46,10 @@
           restricted: true
         }
       })
-      .when('/edit/:postId', {
+      .when('/edit/:articleId', {
         controller: 'EditController',
         templateUrl: 'html/views/edit.html',
+        css: 'css/edit.css',
         access: {
           restricted: false
         }

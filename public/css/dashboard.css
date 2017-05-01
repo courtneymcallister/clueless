@@ -12,6 +12,7 @@ html, body {
 .heading-text h2{
   font-weight: lighter;
   margin-bottom: 5px;
+  background-color: rgba(96,223,229, 0.7);
 }
 
 .container ul {
@@ -21,39 +22,81 @@ html, body {
 .container li {
   float: left;
   margin: 15px;
-  background-color: rgba(255, 64, 64, 0.8);
 }
 .container img {
   height: 300px;
 }
 
-.container img:hover{
+/*.container img:hover{
   background-color: white;
   opacity: 0.7;
-}
+}*/
 
-.container a{
-  text-decoration: none;
-}
-
-.container a:hover{
-  text-decoration: underline;
-  color: #bbc793;
-}
-
-.image-links a{
-  
-}
-
-.image-links:hover a{
-  display: block;
-}
-
-.image-links{
-  background-color: white;
-  height: 40px;
-}
 
 .uploadLink{
   margin-top: 300px;
+}
+
+.image-container{
+  height: 300px;
+  width: inherit;
+  position: relative;
+  border: 3px solid white;
+}
+
+.image-container:hover{
+  /*background-color: white;
+  opacity: 0.7;*/
+  border: 3px solid #60DFE5;
+}
+
+.buttons{
+  display: none;
+
+}
+
+
+#delete-btn{
+  position: absolute;
+  right: 33%;
+  top: 50%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+#edit-btn{
+  position: absolute;
+  right: 33%;
+  top: 20%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.btn:focus{
+  outline:none;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: rgb(96,223,229);
+}
+
+.buttons:hover{
+  display: inline;
+  cursor: pointer;
+}
+
+img:hover + .buttons{
+  display: inline;
+  background-color: white;
 }

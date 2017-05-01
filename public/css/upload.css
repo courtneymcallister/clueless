@@ -10,10 +10,10 @@ body{
 body h2{
   font-weight: lighter;
   padding-left: 20px;
+
 }
 
 .container{
-  border: 1px solid black;
 }
 
 .column1 {
@@ -22,6 +22,7 @@ body h2{
   float: left;
   margin-right: 50px;
   margin-top: 20px;
+  border-right: 1px dotted black;
 }
 
 .description-box {
@@ -41,6 +42,7 @@ body h2{
 
 .description-box h3{
   font-weight: lighter;
+  background-color: rgba(96,223,229, 0.7)
 }
 
 .description-box textarea{

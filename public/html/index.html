@@ -18,15 +18,16 @@
         <li ng-hide='isLoggedIn()'>
           <a href="#!/">Sign Up</a>
         </li>
+        <li ng-controller='LogoutController' ng-if='isLoggedIn()'>
+          <a role='button' href="" ng-click='logout()'>Log Out</a>
+        </li>
         <li ng-show='isLoggedIn()'>
           <a href="#!/dashboard">Dashboard</a>
         </li>
         <li ng-show='isLoggedIn()'>
           <a href="#!/outfit-creator">Outfit Creator</a>
         </li>
-        <li ng-controller='LogoutController' ng-if='isLoggedIn()'>
-          <a role='button' href="" ng-click='logout()'>Log Out</a>
-        </li>
+
       </ul>
     </nav>
 

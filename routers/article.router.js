@@ -72,12 +72,12 @@ router.post('/articles', function(req, res){
 
 //PUT /articles/:id
 router.put('/articles/:id', function(req, res){
-  Article.findOneAndUpdate({_id: req.params.id, owner: req.payload._id}, req.body, function(err, document){
+  Article.findOneAndUpdate({_id: req.params.id, owner: req.payload._id}, req.body, function(err, article){
     if(err){
       res.status(500).json({
         msg: err
       });
-    } else if (!post){
+    } else if (!article){
       res.status(403).json({
         msg: 'Unauthorized'
       });
@@ -90,11 +90,15 @@ router.put('/articles/:id', function(req, res){
 });
 
 //DELETE /articles/:id
-router.delete('/articles/:id', function(req, res){
-  Article.remove({_id: req.params.id, owner: req.payload._id}, function(err, document){
+router.delete('/articles/:id', auth, function(req, res){
+  Article.remove({_id: req.params.id, owner: req.payload._id}, function(err, article){
     if(err){
       res.status(500).json({
         msg: err
+      });
+    } else if(!article){
+      res.status(403).json({
+        msg: 'unauthorized'
       });
     } else {
       res.status(200).json({

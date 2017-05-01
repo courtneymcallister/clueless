@@ -23,25 +23,27 @@
       return $http.get(`${base}/category/${cat}`);
     }
     function getOne(id){
-      return $http.get(`${base}/${id}`)
-                  .then(getAllArticles);
+      return $http.get(`${base}/${id}`);
     }
-    function update(id){
+    function update(article){
+      var url = `${base}/${article._id}`;
       var options = {
         headers: {
           Authorization: `Bearer ${UserService.getToken()}`
         }
       }
-      return $http.put(`${base}/${id}`)
-                  .then(getAllUsers);
+      return $http.put(url, article, options)
+                  .then(function(res){
+                    console.log(res);
+                  });
     }
     function deleteArticle(article){
+      var url = `${base}/${article._id}`;
       var options = {
         headers: {
           Authorization: `Bearer ${UserService.getToken()}`
         }
       }
-      var url = `${base}/${article._id}`;
       return $http.delete(url, options);
     }
 

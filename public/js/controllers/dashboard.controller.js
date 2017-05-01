@@ -26,7 +26,7 @@
 
     function deleteArticle(article){
       ArticleService.deleteArticle(article)
-        .then(populateArticles);
-      }
+                    .then(populateArticles);
+    }
   };
 })()
