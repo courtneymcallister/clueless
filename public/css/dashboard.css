@@ -12,7 +12,7 @@ html, body {
 .heading-text h2{
   font-weight: lighter;
   margin-bottom: 5px;
-  background-color: rgba(96,223,229, 0.7);
+  background-color: rgba(96,223,229, 0.5);
 }
 
 .container ul {
@@ -45,8 +45,8 @@ html, body {
 }
 
 .image-container:hover{
-  /*background-color: white;
-  opacity: 0.7;*/
+  background-color: white;
+  opacity: 0.9;
   border: 3px solid #60DFE5;
 }
 
@@ -88,7 +88,6 @@ html, body {
 
 .btn:hover{
   cursor: pointer;
-  background-color: rgb(96,223,229);
 }
 
 .buttons:hover{

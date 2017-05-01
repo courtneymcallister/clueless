@@ -29,3 +29,9 @@
 .nav-container a:hover{
   text-decoration: underline;
 }
+
+.icon{
+  float: left;
+  margin-top: 8px;
+  margin-left: 10px;
+}

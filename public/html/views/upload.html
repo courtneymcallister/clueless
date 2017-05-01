@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>Add clothes to your closet</h2>
+      <h2>Add clothes to your closet!</h2>
       <form ng-submit='upload(article)' class="upload-form">
         <div class="column1">
           <input type="file" id='uploadImage' ng-required='true'>
@@ -23,8 +23,9 @@
           <input type="text" placeholder="Size" ng-model='article.size'><br>
           <input type="text" placeholder="Date Purchased" ng-model='article.purchaseDate'><br>
           <textarea name="name" rows="8" cols="40" placeholder="Notes" ng-model='article.notes'></textarea><br>
-          <button ng-click="saveImage(article)">Save Details</button><br>
-          <small>* Required field</small>
+          <small>* Required field</small><br>
+          <button ng-click="saveImage(article)">Save Details</button>
+
         </div>
       </form>
     </div>
